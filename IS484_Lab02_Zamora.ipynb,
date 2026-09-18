@@ -71,41 +71,85 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 9,
    "id": "1ee3355c-9e7e-43d5-9055-ffcf7e9119d5",
    "metadata": {},
    "outputs": [
     {
-     "ename": "IndentationError",
-     "evalue": "expected an indented block after function definition on line 1 (629801059.py, line 2)",
-     "output_type": "error",
-     "traceback": [
-      "  \u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[5]\u001b[39m\u001b[32m, line 2\u001b[39m\n\u001b[31m    \u001b[39m\u001b[31m\"\"\"\u001b[39m\n    ^\n\u001b[31mIndentationError\u001b[39m\u001b[31m:\u001b[39m expected an indented block after function definition on line 1\n"
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Camino encontrado: ['Almacen', 'Centro', 'ZonaNorte']\n"
      ]
     }
    ],
    "source": [
     "def bfs(grafo, inicio, objetivo):\n",
-    "\"\"\"\n",
-    "Busca el camino mas corto entre 'inicio' y 'objetivo' usando BFS.\n",
-    "\"\"\"\n",
-    "cola = [[inicio]] # cola de caminos, empieza con el estado inicial\n",
-    "visitados = set()\n",
-    "while cola:\n",
-    "camino = cola.pop(0) # sacar el primer camino de la cola (FIFO)\n",
-    "nodo_actual = camino[-1]\n",
-    "if nodo_actual == objetivo:\n",
-    "return camino\n",
-    "if nodo_actual not in visitados:\n",
-    "visitados.add(nodo_actual)\n",
-    "for vecino in grafo[nodo_actual]:\n",
-    "# COMPLETAR: crear un nuevo camino que sea \"camino + [vecino]\"\n",
-    "# y agregarlo a la cola\n",
-    "pass\n",
-    "return None # no se encontro un camino\n",
+    "    \"\"\"\n",
+    "    Busca el camino mas corto entre 'inicio' y 'objetivo' usando BFS.\n",
+    "    \"\"\"\n",
+    "    cola = [[inicio]]\n",
+    "    visitados = set()\n",
+    "    \n",
+    "    while cola:\n",
+    "        camino = cola.pop(0)\n",
+    "        nodo_actual = camino[-1]\n",
+    "        \n",
+    "        if nodo_actual == objetivo:\n",
+    "            return camino\n",
+    "        \n",
+    "        if nodo_actual not in visitados:\n",
+    "            visitados.add(nodo_actual)\n",
+    "            for vecino in grafo[nodo_actual]:\n",
+    "                nuevo_camino = camino + [vecino]\n",
+    "                cola.append(nuevo_camino)\n",
+    "    \n",
+    "    return None\n",
+    "\n",
     "resultado = bfs(mapa, \"Almacen\", \"ZonaNorte\")\n",
-    "print(\"Camino encontrado:\", resultado)"
+    "print(\"Camino encontrado:\", resultado)\n",
+    "\n",
+    "\n"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "d206aeed-6cd1-4219-95f5-4cd3b7bca8fa",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[22.5 60. ]\n",
+      " [19.  45. ]\n",
+      " [25.3 70. ]\n",
+      " [21.  50. ]]\n",
+      "Forma de la matriz (filas, columnas): (4, 2)\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "\n",
+    "obs1 = np.array([22.5, 60])  # temperatura, humedad\n",
+    "obs2 = np.array([19.0, 45])\n",
+    "obs3 = np.array([25.3, 70])\n",
+    "obs4 = np.array([21.0, 50])\n",
+    "\n",
+    "dataset = np.array([obs1, obs2, obs3, obs4])\n",
+    "print(dataset)\n",
+    "print(\"Forma de la matriz (filas, columnas):\", dataset.shape)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "77205fb2-52ed-40e8-8ff8-6cc335815053",
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
