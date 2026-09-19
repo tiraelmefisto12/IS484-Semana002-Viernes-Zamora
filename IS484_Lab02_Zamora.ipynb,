@@ -70,6 +70,16 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "d1f7cb94-ca64-473f-94b6-4bf11960f8c1",
+   "metadata": {},
+   "source": [
+    "Bien, ahí va tu commit #2 de los 5. Sigamos con BFS.\n",
+    "\n",
+    "Ya tienes el código completo en tu mensaje anterior, así que cópialo tal cual en una nueva celda de tu notebook:"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": 9,
    "id": "1ee3355c-9e7e-43d5-9055-ffcf7e9119d5",
@@ -113,6 +123,16 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "5319860f-6908-44b7-b3df-be8afac09b13",
+   "metadata": {},
+   "source": [
+    "Ahora, NumPy: vectores y matrices (sección 4.4)\n",
+    "\n",
+    "Aquí no hay # COMPLETAR, es solo para que entiendas cómo se representa un dataset como matriz. En una celda nueva:"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": 11,
    "id": "d206aeed-6cd1-4219-95f5-4cd3b7bca8fa",
@@ -145,6 +165,14 @@
   },
   {
    "cell_type": "code",
+   "execution_count": null,
+   "id": "c2fe6b9a-d989-4154-8a72-88073ca5f61b",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
    "execution_count": 13,
    "id": "77205fb2-52ed-40e8-8ff8-6cc335815053",
    "metadata": {},
@@ -161,6 +189,14 @@
    "source": [
     "print(\"Primera observacion (fila 0):\", dataset[0])\n",
     "print(\"Todas las temperaturas (columna 0):\", dataset[:, 0])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "902a6759-d219-49f1-86c7-63d5065c31a9",
+   "metadata": {},
+   "source": [
+    "Perfecto. Sigamos con producto escalar y distancia euclidiana (sección 4.5)."
    ]
   },
   {
@@ -191,6 +227,22 @@
     "# Distancia euclidiana - con la funcion de NumPy\n",
     "distancia_numpy = np.linalg.norm(obs1 - obs2)\n",
     "print(\"Distancia con NumPy:\", distancia_numpy)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "24d71f35-5d3b-4032-9b8c-e356fa04ea52",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cc349a7d-b4b6-425f-9d7b-e53b586f7619",
+   "metadata": {},
+   "source": [
+    "Ahora el Ejercicio Práctico: DFS (sección 5.2, Parte A)"
    ]
   },
   {
@@ -244,10 +296,22 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 19,
    "id": "47d84dbd-469e-481c-9548-c3ddb41e7bd2",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Distancia a la observacion 0: 12.165525060596439\n",
+      "Distancia a la observacion 1: 3.3541019662496847\n",
+      "Distancia a la observacion 2: 22.517548712060112\n",
+      "Distancia a la observacion 3: 2.0615528128088303\n",
+      "La observacion mas parecida es la numero 3\n"
+     ]
+    }
+   ],
    "source": [
     "nueva_observacion = np.array([20.5, 48])\n",
     "distancias = []\n",
@@ -260,6 +324,14 @@
     "indice_mas_cercano = np.argmin(distancias)\n",
     "print(\"La observacion mas parecida es la numero\", indice_mas_cercano)"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ff4b9906-55a0-44c6-b037-cb86afa12377",
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
